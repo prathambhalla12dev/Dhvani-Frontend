@@ -1,7 +1,7 @@
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
-const button = document.getElementById("loginBtn");
+const button = document.getElementById("loginButton");
 const result = document.getElementById("result");
 
 button.addEventListener("click", async function () {
