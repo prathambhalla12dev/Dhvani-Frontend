@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dhvani | Admin Dashboard</title>
+  <link rel="stylesheet" href="adminDashboard.css">
+</head>
+
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <header class="brand">
+      <h2>Dhvani Admin</h2>
+    </header>
+
+    <nav class="menu">
+      <ul>
+        <li><a class="active">Dashboard</a></li>
+        <li><a>Users</a></li>
+        <li><a>Artists</a></li>
+        <li><a>Songs</a></li>
+        <li><a>Albums</a></li>
+        <li><a>Playlists</a></li>
+        <li><a>Reports</a></li>
+        <li><a>Moderation</a></li>
+        <li><a>Settings</a></li>
+        <li><a class="logout">Logout</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="content">
+
+    <header class="topbar">
+      <h1>Admin Control Panel</h1>
+      <div class="admin">
+        <span>Admin</span>
+      </div>
+    </header>
+
+    <section class="stats">
+      <article class="stat-card">
+        <h3>Total Users</h3>
+        <p>24,580</p>
+      </article>
+
+      <article class="stat-card">
+        <h3>Total Songs</h3>
+        <p>142,300</p>
+      </article>
+
+      <article class="stat-card">
+        <h3>Active Artists</h3>
+        <p>4,210</p>
+      </article>
+
+      <article class="stat-card">
+        <h3>Daily Streams</h3>
+        <p>1.8M</p>
+      </article>
+    </section>
+
+    <section class="table-section">
+      <header>
+        <h2>Recently Uploaded Songs</h2>
+      </header>
+
+      <table>
+        <thead>
+        <tr>
+          <th>Song</th>
+          <th>Artist</th>
+          <th>Album</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+          <td>Dream Flow</td>
+          <td>Nova</td>
+          <td>Skyline</td>
+          <td>Pending</td>
+          <td>
+            <button>Approve</button>
+            <button class="danger">Reject</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Midnight Beats</td>
+          <td>Echo</td>
+          <td>Pulse</td>
+          <td>Approved</td>
+          <td>
+            <button class="danger">Remove</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>
