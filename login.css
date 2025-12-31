@@ -1,34 +1,36 @@
 *{
     box-sizing: border-box;
+    margin: 0;
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
 body{
-    height: 100vh;
-    margin: 0;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #f2f4f8, #e6ebf3);
+    background: radial-gradient(circle at top, #eef2f7, #dbe2ec);
 }
 
 h1{
-    margin-bottom: 25px;
-    font-size: 26px;
-    font-weight: 600;
-    color: #1f2937;
+    margin-bottom: 28px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #0f172a;
 }
 
 #loginForm{
+    width: 100%;
+    max-width: 380px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    padding: 35px 45px;
+    gap: 20px;
+    padding: 40px 42px;
     background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-    min-width: 340px;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 #loginForm label{
@@ -36,48 +38,51 @@ h1{
     flex-direction: column;
     gap: 6px;
     font-size: 13px;
-    font-weight: 500;
-    color: #374151;
+    font-weight: 600;
+    color: #334155;
 }
 
 #loginForm input{
-    padding: 10px 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
     font-size: 14px;
+    background: #f8fafc;
     outline: none;
-    transition: border 0.2s, box-shadow 0.2s;
+    transition: border 0.2s, background 0.2s;
 }
 
 #loginForm input:focus{
+    background: #ffffff;
     border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
 }
 
 #loginBtn{
-    margin-top: 10px;
-    padding: 12px;
-    background: #2563eb;
+    margin-top: 8px;
+    padding: 14px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
     color: #ffffff;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
+    letter-spacing: 0.4px;
+    transition: transform 0.1s, opacity 0.15s;
 }
 
 #loginBtn:hover{
-    background: #1d4ed8;
+    opacity: 0.95;
 }
 
 #loginBtn:active{
-    transform: scale(0.98);
+    transform: translateY(1px);
 }
 
 #result{
-    margin-top: 10px;
+    min-height: 18px;
+    margin-top: 6px;
     font-size: 13px;
     text-align: center;
-    font-weight: 500;
+    font-weight: 600;
 }

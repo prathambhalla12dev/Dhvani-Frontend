@@ -3,108 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <title>Dhvani | Admin Dashboard</title>
-  <link rel="stylesheet" href="adminDashboard.css">
+  <link rel="stylesheet" href="dashboard.css">
 </head>
 
 <body>
-<div class="app">
 
-  <aside class="sidebar">
-    <header class="brand">
-      <h2>Dhvani Admin</h2>
-    </header>
+<main class="content">
 
-    <nav class="menu">
-      <ul>
-        <li><a class="active">Dashboard</a></li>
-        <li><a>Users</a></li>
-        <li><a>Artists</a></li>
-        <li><a>Songs</a></li>
-        <li><a>Albums</a></li>
-        <li><a>Playlists</a></li>
-        <li><a>Reports</a></li>
-        <li><a>Moderation</a></li>
-        <li><a>Settings</a></li>
-        <li><a class="logout">Logout</a></li>
-      </ul>
-    </nav>
-  </aside>
+  <header class="topbar">
+    <h1>Dhvani – Admin Control Panel</h1>
+  </header>
 
-  <main class="content">
+  <section class="panel">
 
-    <header class="topbar">
-      <h1>Admin Control Panel</h1>
-      <div class="admin">
-        <span>Admin</span>
-      </div>
-    </header>
+    <h2>Add Artist</h2>
 
-    <section class="stats">
-      <article class="stat-card">
-        <h3>Total Users</h3>
-        <p>24,580</p>
-      </article>
+    <div class="form-row">
+      <label for="artistName"></label><input id="artistName" type="text" placeholder="Artist Name" required>
+      <button id="addArtistBtn">Add Artist</button>
+    </div>
 
-      <article class="stat-card">
-        <h3>Total Songs</h3>
-        <p>142,300</p>
-      </article>
+  </section>
 
-      <article class="stat-card">
-        <h3>Active Artists</h3>
-        <p>4,210</p>
-      </article>
+  <section class="panel">
 
-      <article class="stat-card">
-        <h3>Daily Streams</h3>
-        <p>1.8M</p>
-      </article>
-    </section>
+    <h2>Add Song</h2>
 
-    <section class="table-section">
-      <header>
-        <h2>Recently Uploaded Songs</h2>
-      </header>
+    <div class="form-row">
+      <label for="songTitle"></label><input id="songTitle" type="text" placeholder="Song Title" required>
+      <label for="songUrl"></label><input id="songUrl" type="url" placeholder="Song URL" required>
+      <label for="songArtist"></label><input id="songArtist" type="text" placeholder="Artist Name" required>
+      <button id="addSongBtn">Add Song</button>
+    </div>
 
-      <table>
-        <thead>
-        <tr>
-          <th>Song</th>
-          <th>Artist</th>
-          <th>Album</th>
-          <th>Status</th>
-          <th>Actions</th>
-        </tr>
-        </thead>
+  </section>
 
-        <tbody>
-        <tr>
-          <td>Dream Flow</td>
-          <td>Nova</td>
-          <td>Skyline</td>
-          <td>Pending</td>
-          <td>
-            <button>Approve</button>
-            <button class="danger">Reject</button>
-          </td>
-        </tr>
+  <section class="panel">
 
-        <tr>
-          <td>Midnight Beats</td>
-          <td>Echo</td>
-          <td>Pulse</td>
-          <td>Approved</td>
-          <td>
-            <button class="danger">Remove</button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </section>
+    <h2>Recently Added Songs</h2>
 
-  </main>
+    <table>
+      <thead>
+      <tr>
+        <th>Song</th>
+        <th>Artist</th>
+        <th>URL</th>
+      </tr>
+      </thead>
+      <tbody id="songsTable"></tbody>
+    </table>
 
-</div>
+  </section>
+
+</main>
 
 </body>
 </html>
