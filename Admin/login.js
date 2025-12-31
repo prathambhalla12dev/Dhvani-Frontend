@@ -31,12 +31,15 @@ button.addEventListener("click", async function () {
 
         if (data.successful) {
             result.textContent = "Login successful! Welcome " + data.data.name
+            result.style.color = "#16a34a"
         } else {
             result.textContent = data.message || "Login failed"
+            result.style.color = "#dc2626"
         }
 
     } catch (error) {
-        console.error(error)
+        console.error("error while loging in", error)
         result.textContent = "Server error"
+        result.style.color = "#dc2626"
     }
 })

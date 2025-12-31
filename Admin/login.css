@@ -1,7 +1,83 @@
+*{
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
 body{
     height: 100vh;
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(135deg, #f2f4f8, #e6ebf3);
+}
+
+h1{
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 35px 45px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    min-width: 340px;
+}
+
+#loginForm label{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+}
+
+#loginForm input{
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+#loginForm input:focus{
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+#loginBtn{
+    margin-top: 10px;
+    padding: 12px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+#loginBtn:hover{
+    background: #1d4ed8;
+}
+
+#loginBtn:active{
+    transform: scale(0.98);
+}
+
+#result{
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+    font-weight: 500;
 }
