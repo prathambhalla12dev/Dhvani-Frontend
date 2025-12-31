@@ -29,7 +29,7 @@ button.addEventListener("click", async function () {
             console.log("STATUS FIELD:", data.status)
         }
 
-        if (data.status === "OK") {
+        if (data.successful) {
             result.textContent = "Login successful! Welcome " + data.data.name
         } else {
             result.textContent = data.message || "Login failed"
