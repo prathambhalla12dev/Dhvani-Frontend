@@ -13,14 +13,6 @@ body{
     background: #0f0f0f;
 }
 
-body::before{
-    content:"";
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(180deg, #181818 0%, #121212 60%, #0f0f0f 100%);
-    z-index: -1;
-}
-
 .landing-container{
     padding: 30px 80px;
 }
@@ -34,11 +26,24 @@ nav{
 }
 
 .logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 22px;
     font-weight: bold;
+}
+
+.logo span{
     background: linear-gradient(135deg,#ff7a18,#ff9f43);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.logo img{
+    height: 28px;
+    width: auto;
+    display: block;
+    border-radius: 8px;
 }
 
 .nav-links{
