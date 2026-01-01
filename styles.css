@@ -2,45 +2,30 @@
     box-sizing: border-box;
 }
 
-html, body{
-    margin: 0;
-    height: 100%;
-}
-
 body{
-    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #121212;
     color: white;
-    overflow-x: hidden;
-}
-
-body::before{
-    content:"";
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(circle at top,#1a1a1a,#050505 70%);
-    z-index: -1;
 }
 
 .landing-container{
-    min-height: 100vh;
     padding: 30px 80px;
 }
+
+/* Navbar */
 
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(10px);
-    padding-bottom: 20px;
 }
 
 .logo{
-    font-size: 30px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    background: linear-gradient(90deg,#ff7a18,#ffb347);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff7a18;
 }
 
 .nav-links{
@@ -48,146 +33,98 @@ nav{
     align-items: center;
 }
 
-.nav-links a{
-    margin-right: 35px;
+#discoverLink,
+#premiumLink,
+#loginLink{
+    margin-right: 25px;
     color: white;
     text-decoration: none;
     font-size: 14px;
-    opacity: 0.75;
-    position: relative;
+    opacity: 0.8;
 }
 
-.nav-links a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0;
-    height:2px;
-    background:#ff7a18;
-    transition:0.3s;
-}
-
-.nav-links a:hover::after{
-    width:100%;
-}
+/* Buttons */
 
 .signup-btn{
-    background: linear-gradient(90deg,#ff7a18,#ffb347);
+    background: #ff7a18;
     border: none;
-    padding: 12px 26px;
-    border-radius: 30px;
-    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-weight: 600;
     cursor: pointer;
     color: black;
 }
 
-.hero{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 100px;
-    position: relative;
-}
-
-.hero::before{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    background:#ff7a18;
-    filter: blur(200px);
-    opacity:0.25;
-    right:-200px;
-    top:-150px;
-}
-
-.hero-text{
-    max-width: 520px;
-    z-index:2;
-}
-
-.hero-text h1{
-    font-size: 60px;
-    line-height: 1.05;
-    margin-bottom: 25px;
-    font-weight: 800;
-}
-
-.hero-text p{
-    color: #b3b3b3;
-    font-size: 18px;
-    margin-bottom: 40px;
-}
-
-.hero-buttons{
-    display: flex;
-}
-
 .primary-btn{
-    background: linear-gradient(90deg,#ff7a18,#ffb347);
+    background: #ff7a18;
     border: none;
-    padding: 16px 38px;
-    border-radius: 40px;
-    font-weight: 700;
+    padding: 14px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-right: 15px;
     cursor: pointer;
     color: black;
 }
 
 .secondary-btn{
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.4);
+    border: 1px solid #777;
     color: white;
-    padding: 16px 38px;
-    border-radius: 40px;
+    padding: 14px 30px;
+    border-radius: 25px;
     cursor: pointer;
 }
 
-.primary-btn:hover{
-    background: #ff8f3d;
+/* Hero */
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
 }
 
-.secondary-btn:hover{
-    background: rgba(255,255,255,0.08);
-    border-color: white;
+.hero-text{
+    max-width: 480px;
 }
+
+.hero-text h1{
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero-text p{
+    color: #b3b3b3;
+    margin-bottom: 25px;
+}
+
+/* Image */
 
 .hero-image img{
-    width: 440px;
-    border-radius: 30px;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+    width: 360px;
+    border-radius: 15px;
 }
+
+/* Features */
 
 .features{
     display: flex;
     justify-content: space-between;
-    margin-top: 140px;
+    margin-top: 90px;
 }
 
 .feature-card{
     width: 30%;
-    background: linear-gradient(180deg,#1c1c1c,#121212);
-    padding: 40px;
-    border-radius: 24px;
-    position: relative;
-    overflow:hidden;
-}
-
-.feature-card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background: linear-gradient(120deg,transparent,#ff7a18,transparent);
-    opacity:0.08;
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 15px;
 }
 
 .feature-card h3{
-    margin-bottom: 15px;
-    font-size: 20px;
-    color: white;
+    margin-bottom: 8px;
+    color: #ff7a18;
 }
 
 .feature-card p{
     color: #b3b3b3;
-    line-height: 1.6;
 }
