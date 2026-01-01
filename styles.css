@@ -14,7 +14,7 @@ body{
     padding: 30px 80px;
 }
 
-/* Navbar */
+/* NAVBAR */
 
 nav{
     display: flex;
@@ -43,7 +43,12 @@ nav{
     opacity: 0.8;
 }
 
-/* Buttons */
+#discoverLink:hover,
+#premiumLink:hover,
+#loginLink:hover{
+    opacity: 1;
+    color: #ff7a18;
+}
 
 .signup-btn{
     background: #ff7a18;
@@ -55,27 +60,11 @@ nav{
     color: black;
 }
 
-.primary-btn{
-    background: #ff7a18;
-    border: none;
-    padding: 14px 30px;
-    border-radius: 25px;
-    font-weight: 600;
-    margin-right: 15px;
-    cursor: pointer;
-    color: black;
+.signup-btn:hover{
+    background: #ff8f3d;
 }
 
-.secondary-btn{
-    background: transparent;
-    border: 1px solid #777;
-    color: white;
-    padding: 14px 30px;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-/* Hero */
+/* HERO */
 
 .hero{
     display: flex;
@@ -98,18 +87,47 @@ nav{
     margin-bottom: 25px;
 }
 
-/* Image */
+.primary-btn{
+    background: #ff7a18;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-right: 15px;
+    cursor: pointer;
+    color: black;
+}
+
+.primary-btn:hover{
+    background: #ff8f3d;
+}
+
+.secondary-btn{
+    background: transparent;
+    border: 1px solid #777;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.secondary-btn:hover{
+    background: rgba(255,255,255,0.08);
+    border-color: white;
+}
 
 .hero-image img{
     width: 360px;
     border-radius: 15px;
 }
 
-/* Features */
+/* FEATURES */
 
 .features{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
     margin-top: 90px;
 }
 
