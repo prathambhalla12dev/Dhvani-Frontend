@@ -78,10 +78,11 @@ nav{
     font-weight: 600;
     cursor: pointer;
     color: black;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .signup-btn:hover{
-    background: #ffb06a;
+    transform: scale(1.08);
 }
 
 /* HERO */
@@ -117,10 +118,11 @@ nav{
     margin-right: 15px;
     cursor: pointer;
     color: black;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .primary-btn:hover{
-    background: #ffb06a;
+    transform: scale(1.08);
 }
 
 .secondary-btn{
