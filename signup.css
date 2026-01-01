@@ -73,9 +73,11 @@ body{
     text-align: center;
     margin-top: 20px;
     font-size: 14px;
+    color: #b3b3b3;
 }
 
 .login-text a{
+    margin-left: 6px;
     color: #ff9f43;
     text-decoration: none;
 }
