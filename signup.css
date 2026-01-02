@@ -82,7 +82,7 @@ body{
     text-decoration: none;
 }
 
-.form-message{
+.form-message {
     margin-top: 12px;
     text-align: center;
     font-size: 13px;
@@ -90,3 +90,4 @@ body{
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, opacity 0.3s ease;
+}
