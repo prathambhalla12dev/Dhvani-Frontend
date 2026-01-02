@@ -25,6 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let isSignup = false
 
+    function parseApiResponse(json){
+        return {
+            successful: json.successful === true,
+            message: json.message || "",
+            status: json.status,
+            data: json.data
+        }
+    }
+
     discover.onclick = e => { e.preventDefault(); comingSoonPopup.classList.add("show") }
     premium.onclick = e => { e.preventDefault(); comingSoonPopup.classList.add("show") }
 
@@ -97,13 +106,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify(payload)
             })
 
-            const data = await res.json()
+            const raw = await res.json()
+            const api = parseApiResponse(raw)
 
-            if(res.ok){
+            if(api.successful === true){
                 window.location.href = "dashboard.html"
             }else{
-                authError.innerText = data.error || "Authentication failed"
+                authError.innerText = api.message || "Authentication failed"
             }
+
         }catch{
             authError.innerText = "Server not reachable"
         }
