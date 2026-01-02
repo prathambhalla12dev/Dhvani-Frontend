@@ -16,22 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleAuth = document.getElementById("toggleAuth")
     const toggleText = document.getElementById("toggleText")
     const nameField = document.getElementById("nameField")
+    const confirmField = document.getElementById("confirmField")
 
     const authName = document.getElementById("authName")
     const authEmail = document.getElementById("authEmail")
     const authPassword = document.getElementById("authPassword")
+    const authConfirm = document.getElementById("authConfirm")
 
     let isSignup = false
 
-    discover.onclick = e => {
-        e.preventDefault()
-        comingSoonPopup.classList.add("show")
-    }
-
-    premium.onclick = e => {
-        e.preventDefault()
-        comingSoonPopup.classList.add("show")
-    }
+    discover.onclick = e => { e.preventDefault(); comingSoonPopup.classList.add("show") }
+    premium.onclick = e => { e.preventDefault(); comingSoonPopup.classList.add("show") }
 
     login.onclick = e => {
         e.preventDefault()
@@ -47,14 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
         loginPopup.classList.add("show")
     }
 
-    closeBtn.onclick = () => {
-        comingSoonPopup.classList.remove("show")
-    }
+    closeBtn.onclick = () => comingSoonPopup.classList.remove("show")
 
     loginPopup.onclick = e => {
-        if(e.target === loginPopup){
-            loginPopup.classList.remove("show")
-        }
+        if(e.target === loginPopup) loginPopup.classList.remove("show")
     }
 
     toggleAuth.onclick = e => {
@@ -70,12 +61,14 @@ document.addEventListener("DOMContentLoaded", () => {
             toggleText.innerText = "Already have an account?"
             toggleAuth.innerText = "Login"
             nameField.style.display = "block"
+            confirmField.style.display = "block"
         }else{
             authTitle.innerText = "Login to Dhvani"
             authBtn.innerText = "Login"
             toggleText.innerText = "Don’t have an account?"
             toggleAuth.innerText = "Sign up"
             nameField.style.display = "none"
+            confirmField.style.display = "none"
         }
     }
 
@@ -83,6 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault()
 
         authError.innerText = "Please wait..."
+
+        if(isSignup && authPassword.value !== authConfirm.value){
+            authError.innerText = "Passwords do not match"
+            return
+        }
 
         const url = isSignup
             ? "http://localhost:5000/api/signup"

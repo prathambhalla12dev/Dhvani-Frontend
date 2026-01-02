@@ -51,7 +51,6 @@
 
 </div>
 
-<!-- Coming Soon -->
 <div id="comingSoonPopup" class="coming-soon">
   <div class="popup-box">
     <h3>Coming Soon</h3>
@@ -60,7 +59,6 @@
   </div>
 </div>
 
-<!-- Auth Popup -->
 <div id="loginPopup" class="login-modal">
   <div class="login-box">
 
@@ -82,10 +80,16 @@
         <input type="password" id="authPassword" required>
       </label>
 
+      <div id="confirmField" style="display:none">
+        <label>Confirm Password
+          <input type="password" id="authConfirm">
+        </label>
+      </div>
+
       <button type="submit" id="authBtn">Login</button>
       <p class="login-error" id="authError"></p>
 
-      <p style="margin-top:15px;font-size:13px">
+      <p style="margin-top:15px;font-size:13px;text-align:center">
         <span id="toggleText">Don’t have an account?</span>
         <a href="#" id="toggleAuth" style="color:#ff9f43">Sign up</a>
       </p>
