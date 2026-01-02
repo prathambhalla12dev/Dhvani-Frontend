@@ -7,49 +7,96 @@ document.addEventListener("DOMContentLoaded", () => {
     const discover = document.getElementById("discoverLink")
     const premium = document.getElementById("premiumLink")
     const login = document.getElementById("loginLink")
+    const signup = document.getElementById("signupLink")
 
-    const loginForm = document.getElementById("loginForm")
-    const loginError = document.getElementById("loginError")
-    const loginEmail = document.getElementById("loginEmail")
-    const loginPassword = document.getElementById("loginPassword")
+    const authForm = document.getElementById("authForm")
+    const authTitle = document.getElementById("authTitle")
+    const authBtn = document.getElementById("authBtn")
+    const authError = document.getElementById("authError")
+    const toggleAuth = document.getElementById("toggleAuth")
+    const toggleText = document.getElementById("toggleText")
+    const nameField = document.getElementById("nameField")
 
-    discover.addEventListener("click", e => {
+    const authName = document.getElementById("authName")
+    const authEmail = document.getElementById("authEmail")
+    const authPassword = document.getElementById("authPassword")
+
+    let isSignup = false
+
+    discover.onclick = e => {
         e.preventDefault()
         comingSoonPopup.classList.add("show")
-    })
+    }
 
-    premium.addEventListener("click", e => {
+    premium.onclick = e => {
         e.preventDefault()
         comingSoonPopup.classList.add("show")
-    })
+    }
 
-    login.addEventListener("click", e => {
+    login.onclick = e => {
         e.preventDefault()
+        isSignup = false
+        updateUI()
         loginPopup.classList.add("show")
-    })
+    }
 
-    closeBtn.addEventListener("click", () => {
+    signup.onclick = e => {
+        e.preventDefault()
+        isSignup = true
+        updateUI()
+        loginPopup.classList.add("show")
+    }
+
+    closeBtn.onclick = () => {
         comingSoonPopup.classList.remove("show")
-    })
+    }
 
-    loginPopup.addEventListener("click", e => {
+    loginPopup.onclick = e => {
         if(e.target === loginPopup){
             loginPopup.classList.remove("show")
         }
-    })
+    }
 
-    loginForm.addEventListener("submit", async e => {
+    toggleAuth.onclick = e => {
         e.preventDefault()
-        loginError.innerText = "Logging in..."
+        isSignup = !isSignup
+        updateUI()
+    }
+
+    function updateUI(){
+        if(isSignup){
+            authTitle.innerText = "Create your Dhvani account"
+            authBtn.innerText = "Sign Up"
+            toggleText.innerText = "Already have an account?"
+            toggleAuth.innerText = "Login"
+            nameField.style.display = "block"
+        }else{
+            authTitle.innerText = "Login to Dhvani"
+            authBtn.innerText = "Login"
+            toggleText.innerText = "Don’t have an account?"
+            toggleAuth.innerText = "Sign up"
+            nameField.style.display = "none"
+        }
+    }
+
+    authForm.onsubmit = async e => {
+        e.preventDefault()
+
+        authError.innerText = "Please wait..."
+
+        const url = isSignup
+            ? "http://localhost:5000/api/signup"
+            : "http://localhost:5000/api/login"
+
+        const payload = isSignup
+            ? { name: authName.value, email: authEmail.value, password: authPassword.value }
+            : { email: authEmail.value, password: authPassword.value }
 
         try{
-            const res = await fetch("http://localhost:5000/api/login", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    email: loginEmail.value,
-                    password: loginPassword.value
-                })
+            const res = await fetch(url,{
+                method:"POST",
+                headers:{ "Content-Type":"application/json" },
+                body: JSON.stringify(payload)
             })
 
             const data = await res.json()
@@ -57,11 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if(res.ok){
                 window.location.href = "dashboard.html"
             }else{
-                loginError.innerText = data.error || "Invalid credentials"
+                authError.innerText = data.error || "Authentication failed"
             }
         }catch{
-            loginError.innerText = "Server not reachable"
+            authError.innerText = "Server not reachable"
         }
-    })
+    }
 
 })
