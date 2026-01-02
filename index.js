@@ -92,12 +92,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const url = isSignup
-            ? "http://localhost:5000/api/signup"
-            : "http://localhost:5000/api/login"
+            ? "http://localhost:5000/api/user/signup"
+            : "http://localhost:5000/api/user/login"
 
         const payload = isSignup
-            ? { name: authName.value, email: authEmail.value, password: authPassword.value }
-            : { email: authEmail.value, password: authPassword.value }
+            ? {
+                name: authName.value,
+                email: authEmail.value,
+                password: authPassword.value,
+                confirmPassword: authConfirm.value
+            }
+            : {
+                email: authEmail.value,
+                password: authPassword.value
+            }
 
         try{
             const res = await fetch(url,{
