@@ -29,7 +29,7 @@
       <h1>Your Music. Your Vibe</h1>
       <p>Stream millions of songs, podcasts, and playlists tailored just for you</p>
       <div class="hero-buttons">
-        <a href="#" class="primary-btn">Start Listening</a>
+        <a href="dashboard.html" class="primary-btn">Start Listening</a>
         <button id="exploreBtn" class="secondary-btn">Explore</button>
       </div>
     </div>
@@ -72,6 +72,38 @@
   </section>
 
 </div>
+
+<div id="comingSoonPopup" class="coming-soon">
+  <div class="popup-box">
+    <h3>Coming Soon</h3>
+    <p>This feature is not available yet</p>
+    <button id="closePopup">OK</button>
+  </div>
+</div>
+
+<script>
+  const popup = document.getElementById("comingSoonPopup")
+  const closeBtn = document.getElementById("closePopup")
+
+  document.getElementById("discoverLink").addEventListener("click", e => {
+    e.preventDefault()
+    popup.classList.add("show")
+  })
+
+  document.getElementById("premiumLink").addEventListener("click", e => {
+    e.preventDefault()
+    popup.classList.add("show")
+  })
+
+  document.getElementById("loginLink").addEventListener("click", e => {
+    e.preventDefault()
+    popup.classList.add("show")
+  })
+
+  closeBtn.addEventListener("click", () => {
+    popup.classList.remove("show")
+  })
+</script>
 
 </body>
 </html>
