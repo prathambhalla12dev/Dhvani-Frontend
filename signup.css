@@ -1,133 +1,92 @@
 *{
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 body{
-    margin:0;
-    background:#000;
-    font-family: Arial, serif;
-    color:white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
 }
 
-.app{
-    display:flex;
-    height:100vh;
+.signup-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* SIDEBAR */
-
-.sidebar{
-    width:240px;
-    background:#000;
-    padding:25px;
-    display:flex;
-    flex-direction:column;
-    border-right:1px solid #1f1f1f;
+.signup-box{
+    background: #1a1a1a;
+    padding: 15px 40px;
+    border-radius: 15px;
+    width: 360px;
 }
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:22px;
-    font-weight:bold;
-    margin-bottom:30px;
+.signup-box h2{
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg,#ff7a18,#ff9f43);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.logo span{
-    background:linear-gradient(135deg,#ff7a18,#ff9f43);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+.signup-box label{
+    display: block;
+    margin-bottom: 18px;
+    font-size: 13px;
+    color: #b3b3b3;
 }
 
-.logo img{
-    height:28px;
+.signup-box input{
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #2a2a2a;
+    color: white;
+    outline: none;
 }
 
-.menu a{
-    display:block;
-    padding:12px 0;
-    font-size:15px;
-    color:#b3b3b3;
-    cursor:pointer;
+.signup-box input::placeholder{
+    color: #888;
 }
 
-.menu .active{
-    color:white;
-    font-weight:600;
+.signup-btn{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg,#ff7a18,#ff9f43);
+    font-weight: 600;
+    cursor: pointer;
+    color: black;
+    margin-top: 10px;
 }
 
-.menu a:hover{
-    color:white;
+.signup-btn:hover{
+    transform: scale(1.05);
 }
 
-.playlist-create{
-    margin-top:30px;
+.login-text{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #b3b3b3;
 }
 
-.playlist-create button{
-    width:100%;
-    padding:10px;
-    border:none;
-    border-radius:6px;
-    background:#1f1f1f;
-    color:white;
-    cursor:pointer;
+.login-text a{
+    margin-left: 6px;
+    color: #ff9f43;
+    text-decoration: none;
 }
 
-.playlist-list{
-    margin-top:20px;
-    overflow-y:auto;
-}
-
-/* MAIN */
-
-.main{
-    flex:1;
-    background:linear-gradient(#1a1a1a,#000);
-    padding:30px;
-}
-
-.topbar{
-    margin-bottom:30px;
-}
-
-.topbar input{
-    width:320px;
-    padding:12px 15px;
-    border:none;
-    border-radius:30px;
-    background:#2a2a2a;
-    color:white;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
-}
-
-.card{
-    height:160px;
-    background:#181818;
-    border-radius:12px;
-    padding:20px;
-    font-weight:600;
-    display:flex;
-    align-items:flex-end;
-    cursor:pointer;
-}
-
-.card:hover{
-    background:#242424;
-}
-
-.playlist{
-    color:#b3b3b3;
-    padding:8px 0;
-    cursor:pointer;
-}
-
-.playlist:hover{
-    color:white;
-}
+.form-message{
+    margin-top: 12px;
+    text-align: center;
+    font-size: 13px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
