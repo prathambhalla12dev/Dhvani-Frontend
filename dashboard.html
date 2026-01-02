@@ -16,184 +16,126 @@
     </div>
 
     <nav class="menu">
-      <div class="menu-item active">
+      <div class="menu-item active" data-section="home">
         <span>🏠</span>
         <span>Home</span>
       </div>
-      <div class="menu-item">
+      <div class="menu-item" data-section="search">
         <span>🔍</span>
         <span>Search</span>
       </div>
-      <div class="menu-item">
+      <div class="menu-item" data-section="library">
         <span>📚</span>
         <span>Your Library</span>
       </div>
-
-      <div class="menu-section">
-        <div class="menu-item">
-          <span>➕</span>
-          <span>Create Playlist</span>
-        </div>
-        <div class="menu-item">
-          <span>❤️</span>
-          <span>Liked Songs</span>
-        </div>
-        <div class="menu-item">
-          <span>📻</span>
-          <span>Podcasts</span>
-        </div>
+      <div class="menu-item" data-section="liked">
+        <span>❤️</span>
+        <span>Liked Songs</span>
       </div>
-
-      <div class="menu-section">
-        <h4>Playlists</h4>
-        <div class="menu-item">My Favorites</div>
-        <div class="menu-item">Workout Mix</div>
-        <div class="menu-item">Chill Vibes</div>
-        <div class="menu-item">Party Hits</div>
+      <div class="menu-item" data-section="podcasts">
+        <span>📻</span>
+        <span>Podcasts</span>
       </div>
     </nav>
-
-    <button class="create-playlist-btn">+ New Playlist</button>
   </aside>
 
   <!-- MAIN CONTENT -->
   <main class="main-content">
-    <div class="topbar">
-      <div class="search-bar">
-        <span class="search-icon">🔍</span>
-        <input type="text" placeholder="Search for songs, artists, or albums..." id="searchInput">
+    <!-- HOME SECTION -->
+    <section id="homeSection" class="content-section active">
+      <div class="topbar">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <label for="quickSearch"></label><input type="text" placeholder="Search for songs or artists..." id="quickSearch">
+        </div>
+        <div class="user-profile">
+          <div class="user-avatar">JD</div>
+          <span id="userName">John Doe</span>
+        </div>
       </div>
-      <div class="user-profile">
-        <div class="user-avatar">JD</div>
-        <span id="userName">John Doe</span>
-      </div>
-    </div>
 
-    <div class="welcome-section">
-      <h1 id="greeting">Good evening</h1>
-      <p>Welcome back! Here's what's new for you today.</p>
-    </div>
+      <div class="welcome-section">
+        <h1 id="greeting">Good evening</h1>
+        <p>Start exploring and discovering your favorite music.</p>
+      </div>
 
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-label">Total Listening Time</div>
-        <div class="stat-value">127h</div>
+      <div class="section-header">
+        <h2>Recently Played</h2>
+        <span class="view-all">View All</span>
       </div>
-      <div class="stat-card">
-        <div class="stat-label">Songs Played</div>
-        <div class="stat-value">1,842</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Favorite Genre</div>
-        <div class="stat-value">Pop</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Artists Followed</div>
-        <div class="stat-value">48</div>
-      </div>
-    </div>
 
-    <div class="section-header">
-      <h2>Made For You</h2>
-      <span class="view-all">View All</span>
-    </div>
+      <div class="recent-list" id="recentlyPlayed"></div>
 
-    <div class="music-grid" id="madeForYou">
-      <div class="music-card">
-        <div class="album-art">
-          <div class="play-btn">
-            <div class="play-icon"></div>
-          </div>
-        </div>
-        <div class="music-title">Daily Mix 1</div>
-        <div class="music-artist">Your top songs</div>
+      <div class="section-header">
+        <h2>Popular Right Now</h2>
+        <span class="view-all">View All</span>
       </div>
-      <div class="music-card">
-        <div class="album-art">
-          <div class="play-btn">
-            <div class="play-icon"></div>
-          </div>
-        </div>
-        <div class="music-title">Discover Weekly</div>
-        <div class="music-artist">Fresh finds</div>
-      </div>
-      <div class="music-card">
-        <div class="album-art">
-          <div class="play-btn">
-            <div class="play-icon"></div>
-          </div>
-        </div>
-        <div class="music-title">Release Radar</div>
-        <div class="music-artist">New releases</div>
-      </div>
-      <div class="music-card">
-        <div class="album-art">
-          <div class="play-btn">
-            <div class="play-icon"></div>
-          </div>
-        </div>
-        <div class="music-title">Chill Mix</div>
-        <div class="music-artist">Relax and unwind</div>
-      </div>
-      <div class="music-card">
-        <div class="album-art">
-          <div class="play-btn">
-            <div class="play-icon"></div>
-          </div>
-        </div>
-        <div class="music-title">Workout Pump</div>
-        <div class="music-artist">Get energized</div>
-      </div>
-      <div class="music-card">
-        <div class="album-art">
-          <div class="play-btn">
-            <div class="play-icon"></div>
-          </div>
-        </div>
-        <div class="music-title">Focus Flow</div>
-        <div class="music-artist">Deep concentration</div>
-      </div>
-    </div>
 
-    <div class="section-header">
-      <h2>Recently Played</h2>
-      <span class="view-all">View All</span>
-    </div>
+      <div class="music-grid" id="popularMusic"></div>
 
-    <div class="recent-list" id="recentlyPlayed">
-      <div class="recent-item">
-        <div class="recent-thumb"></div>
-        <div class="recent-info">
-          <div class="recent-title">Blinding Lights</div>
-          <div class="recent-meta">The Weeknd • After Hours</div>
-        </div>
-        <div class="recent-duration">3:42</div>
+      <div class="section-header">
+        <h2>Recommended For You</h2>
+        <span class="view-all">View All</span>
       </div>
-      <div class="recent-item">
-        <div class="recent-thumb"></div>
-        <div class="recent-info">
-          <div class="recent-title">Levitating</div>
-          <div class="recent-meta">Dua Lipa • Future Nostalgia</div>
-        </div>
-        <div class="recent-duration">3:23</div>
+
+      <div class="music-grid" id="recommendedMusic"></div>
+    </section>
+
+    <!-- SEARCH SECTION -->
+    <section id="searchSection" class="content-section">
+      <div class="search-header">
+        <h1>Search</h1>
+        <p>Find your favorite songs and artists</p>
       </div>
-      <div class="recent-item">
-        <div class="recent-thumb"></div>
-        <div class="recent-info">
-          <div class="recent-title">Save Your Tears</div>
-          <div class="recent-meta">The Weeknd • After Hours</div>
-        </div>
-        <div class="recent-duration">3:35</div>
+
+      <div class="search-tabs">
+        <button class="search-tab active" data-tab="songs">Songs</button>
+        <button class="search-tab" data-tab="artists">Artists</button>
       </div>
-      <div class="recent-item">
-        <div class="recent-thumb"></div>
-        <div class="recent-info">
-          <div class="recent-title">Good 4 U</div>
-          <div class="recent-meta">Olivia Rodrigo • SOUR</div>
-        </div>
-        <div class="recent-duration">2:58</div>
+
+      <div class="search-input-container">
+        <label for="mainSearch"></label><input type="text" id="mainSearch" placeholder="What do you want to listen to?" class="main-search-input">
       </div>
-    </div>
+
+      <div id="searchResults" class="search-results"></div>
+    </section>
+
+    <!-- LIBRARY SECTION -->
+    <section id="librarySection" class="content-section">
+      <div class="section-title">
+        <h1>Your Library</h1>
+        <p>Your saved songs and artists</p>
+      </div>
+      <div id="libraryContent" class="library-content">
+        <div class="empty-state">
+          <span class="empty-icon">📚</span>
+          <h3>Your library is empty</h3>
+          <p>Start exploring and save your favorite music</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIKED SONGS SECTION -->
+    <section id="likedSection" class="content-section">
+      <div class="section-title">
+        <h1>Liked Songs</h1>
+        <p>Songs you've marked as favorites</p>
+      </div>
+      <div id="likedContent" class="liked-content"></div>
+    </section>
+
+    <!-- PODCASTS SECTION -->
+    <section id="podcastsSection" class="content-section">
+      <div class="section-title">
+        <h1>Podcasts</h1>
+        <p>Your podcast subscriptions</p>
+      </div>
+      <div class="empty-state">
+        <span class="empty-icon">📻</span>
+        <h3>No podcasts yet</h3>
+        <p>Discover and subscribe to podcasts</p>
+      </div>
+    </section>
   </main>
 </div>
 
@@ -202,8 +144,8 @@
   <div class="now-playing">
     <div class="now-playing-thumb"></div>
     <div class="now-playing-info">
-      <h4 id="currentTrack">Blinding Lights</h4>
-      <p id="currentArtist">The Weeknd</p>
+      <h4 id="currentTrack">Select a song to play</h4>
+      <p id="currentArtist">-</p>
     </div>
   </div>
 
@@ -211,16 +153,16 @@
     <div class="control-buttons">
       <button class="control-btn" id="prevBtn">⏮</button>
       <button class="control-btn" id="backwardBtn">⏪</button>
-      <button class="control-btn play-pause" id="playPauseBtn">▶</button>
+      <button class="control-btn play-pause" id="playPauseBtn" disabled>▶</button>
       <button class="control-btn" id="forwardBtn">⏩</button>
       <button class="control-btn" id="nextBtn">⏭</button>
     </div>
     <div class="progress-bar">
-      <span class="time" id="currentTime">1:23</span>
+      <span class="time" id="currentTime">0:00</span>
       <div class="progress" id="progressBar">
         <div class="progress-fill" id="progressFill"></div>
       </div>
-      <span class="time" id="totalTime">3:42</span>
+      <span class="time" id="totalTime">0:00</span>
     </div>
   </div>
 
