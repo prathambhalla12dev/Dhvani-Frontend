@@ -16,6 +16,7 @@
       <img src="logo.png" alt="Dhvani logo">
       <span>Dhvani</span>
     </div>
+
     <div class="nav-links">
       <a id="discoverLink" href="#">Discover</a>
       <a id="premiumLink" href="#">Premium</a>
@@ -30,49 +31,27 @@
       <p>Stream millions of songs, podcasts, and playlists tailored just for you</p>
       <div class="hero-buttons">
         <a href="dashboard.html" class="primary-btn">Start Listening</a>
-        <button id="exploreBtn" class="secondary-btn">Explore</button>
+        <button class="secondary-btn">Explore</button>
       </div>
     </div>
 
     <div class="hero-image">
-      <img alt="" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d" />
+      <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d" alt="">
     </div>
   </section>
 
   <section class="features">
-    <div class="feature-card">
-      <h3>Personalized Playlists</h3>
-      <p>Music picked based on your taste</p>
-    </div>
-
-    <div class="feature-card">
-      <h3>Offline Mode</h3>
-      <p>Download and listen anywhere</p>
-    </div>
-
-    <div class="feature-card">
-      <h3>High-Quality Audio</h3>
-      <p>Crystal clear sound experience</p>
-    </div>
-
-    <div class="feature-card">
-      <h3>Smart Recommendations</h3>
-      <p>Discover new music every day</p>
-    </div>
-
-    <div class="feature-card">
-      <h3>Ad-Free Listening</h3>
-      <p>Enjoy uninterrupted music anytime</p>
-    </div>
-
-    <div class="feature-card">
-      <h3>Cross-Device Sync</h3>
-      <p>Pick up where you left off on any device</p>
-    </div>
+    <div class="feature-card"><h3>Personalized Playlists</h3><p>Music picked based on your taste</p></div>
+    <div class="feature-card"><h3>Offline Mode</h3><p>Download and listen anywhere</p></div>
+    <div class="feature-card"><h3>High-Quality Audio</h3><p>Crystal clear sound experience</p></div>
+    <div class="feature-card"><h3>Smart Recommendations</h3><p>Discover new music every day</p></div>
+    <div class="feature-card"><h3>Ad-Free Listening</h3><p>Enjoy uninterrupted music anytime</p></div>
+    <div class="feature-card"><h3>Cross-Device Sync</h3><p>Pick up where you left off on any device</p></div>
   </section>
 
 </div>
 
+<!-- Coming Soon Popup -->
 <div id="comingSoonPopup" class="coming-soon">
   <div class="popup-box">
     <h3>Coming Soon</h3>
@@ -81,29 +60,24 @@
   </div>
 </div>
 
-<script>
-  const popup = document.getElementById("comingSoonPopup")
-  const closeBtn = document.getElementById("closePopup")
+<!-- Login Popup -->
+<div id="loginPopup" class="login-modal">
+  <div class="login-box">
+    <h3>Login to Dhvani</h3>
 
-  document.getElementById("discoverLink").addEventListener("click", e => {
-    e.preventDefault()
-    popup.classList.add("show")
-  })
+    <form id="loginForm">
+      <label for="loginEmail">Email</label>
+      <input type="email" id="loginEmail" placeholder="Enter your email" required>
 
-  document.getElementById("premiumLink").addEventListener("click", e => {
-    e.preventDefault()
-    popup.classList.add("show")
-  })
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" placeholder="Enter your password" required>
 
-  document.getElementById("loginLink").addEventListener("click", e => {
-    e.preventDefault()
-    popup.classList.add("show")
-  })
+      <button type="submit">Login</button>
+      <p class="login-error" id="loginError"></p>
+    </form>
+  </div>
+</div>
 
-  closeBtn.addEventListener("click", () => {
-    popup.classList.remove("show")
-  })
-</script>
-
+<script src="index.js"></script>
 </body>
 </html>
