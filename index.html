@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhvani - Professional Music Streaming</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="logo">Dhvani</div>
+  <div class="auth-buttons">
+    <a href="login.html"><button class="login-btn" id="loginBtn">Login</button></a>
+    <a href="signup.html"><button class="signup-btn" id="signupBtn">Signup</button></a>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Music for Everyone</h1>
+
+  <div class="search-container">
+    <label for="searchInput"></label><input type="text" class="search-box" placeholder="Search for songs, artists, albums..." id="searchInput">
+    <span class="search-icon">🔍</span>
+  </div>
+</section>
+
+<section class="features">
+  <div class="feature-card">
+    <div class="feature-icon">🎵</div>
+    <h3>Search & Play</h3>
+    <p>Search millions of songs and play them instantly. No login required to enjoy great music.</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">👨‍🎤</div>
+    <h3>Explore Artists</h3>
+    <p>Discover artists and browse their complete discography. Find your next favorite track.</p>
+  </div>
+
+  <div class="feature-card locked">
+    <div class="feature-icon">📝</div>
+    <h3>Create Playlists</h3>
+    <p>Organize your favorite tracks into custom playlists. Sign up to unlock this feature.</p>
+  </div>
+
+  <div class="feature-card locked">
+    <div class="feature-icon">✨</div>
+    <h3>Get Recommendations</h3>
+    <p>Discover new music tailored to your taste. Create an account to get personalized suggestions.</p>
+  </div>
+</section>
+
+<section class="player-demo">
+  <div class="player">
+    <div class="album-art">🎸</div>
+    <div class="track-info">
+      <h4>Now Playing: Summer Vibes</h4>
+      <p>The Groove Masters</p>
+    </div>
+    <div class="controls">
+      <button class="control-btn" id="prevBtn">⏮</button>
+      <button class="control-btn play-btn" id="playBtn">▶</button>
+      <button class="control-btn" id="nextBtn">⏭</button>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
